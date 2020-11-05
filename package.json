@@ -1,0 +1,27 @@
+{
+	"name": "word_store",
+	"version": "0.1.0",
+	"description": "A simple project o store and learn words",
+	"main": "src/index.ts",
+	"repository": "https://github.com/lamecksilva/word_store.git",
+	"author": "Lameck Sandro <lameck2@hotmail.com>",
+	"license": "MIT",
+	"private": false,
+	"devDependencies": {
+		"@types/express": "^4.17.8",
+		"@types/mongoose": "^5.7.37",
+		"@types/node": "^14.14.6",
+		"rimraf": "^3.0.2",
+		"ts-node-dev": "^1.0.0",
+		"typescript": "^4.0.5"
+	},
+	"scripts": {
+		"build": "rimraf ./build && tsc",
+		"dev": "ts-node-dev --respawn --transpile-only --inspect -- ./src/index.ts"
+	},
+	"dependencies": {
+		"dotenv": "^8.2.0",
+		"express": "^4.17.1",
+		"mongoose": "^5.10.12"
+	}
+}
