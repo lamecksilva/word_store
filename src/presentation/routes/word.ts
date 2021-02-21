@@ -4,7 +4,7 @@ import { wordController } from '../controllers';
 
 const router = Router();
 
-export function wordRouter() {
+export async function wordRouter() {
 	router.get('/all', wordController.findAllWords);
 
 	router.post('/', wordController.saveNewWord);

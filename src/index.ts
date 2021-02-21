@@ -1,4 +1,5 @@
 import express, { Application } from 'express';
+require('dotenv').config();
 
 import { applyRoutes } from './presentation';
 

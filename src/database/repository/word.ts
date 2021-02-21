@@ -32,5 +32,5 @@ export async function deleteWord(id: string) {
  * Find and return all Words
  */
 export async function findAllWords() {
-	return await Word.find({}, { updatedAt: 1 }).lean();
+	return await Word.find({}).sort({ updatedAt: 1 }).lean();
 }

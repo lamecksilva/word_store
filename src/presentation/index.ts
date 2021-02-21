@@ -1,4 +1,12 @@
-import { Application, Errback, NextFunction, Request, Response } from 'express';
+import {
+	Application,
+	Errback,
+	NextFunction,
+	Request,
+	Response,
+	json,
+} from 'express';
+import { connectDB } from '../database';
 
 import { wordRouter } from './routes';
 
@@ -8,6 +16,8 @@ import { wordRouter } from './routes';
  */
 export async function applyRoutes(app: Application): Promise<void> {
 	// app.use('/images', await imagesRouter());
+	app.use(json());
+
 	app.get('/', (_: Request, res: Response) => {
 		return res.json({
 			message: `${process.env?.SERVER_NAME || 'Server Name'} Online`,
@@ -28,6 +38,8 @@ export async function applyRoutes(app: Application): Promise<void> {
 			return res.status(500).json({ message: 'Internal Server Error', err });
 		}
 	);
+
+	connectDB();
 
 	console.info('[ ROUTES ] Routes configured and ready.');
 }
